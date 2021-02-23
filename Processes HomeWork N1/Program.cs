@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Processes_HomeWork_N1
@@ -18,7 +19,12 @@ namespace Processes_HomeWork_N1
             info1.Arguments = input;
             info1.FileName = "..\\..\\..\\Calc\\bin\\Debug\\Calc.exe";
             Process process1 = Process.Start(info1);
-
+            while (!process1.HasExited)
+            {
+                Thread.Sleep(100);
+            }
+            Console.WriteLine(process1.ExitCode);
+            Console.ReadLine();
             
             Console.Write("Path: ");
             //var path = Console.ReadLine();
@@ -31,8 +37,9 @@ namespace Processes_HomeWork_N1
             info2.Arguments = path + ' ' + word;
             info2.FileName = "..\\..\\..\\Word Counter\\bin\\Debug\\Word Counter.exe";
             Process process2 = Process.Start(info2);
-            
-
+            Console.ReadLine();
+            process1?.Close();
+            process2?.Close();
         }
     }
 }
