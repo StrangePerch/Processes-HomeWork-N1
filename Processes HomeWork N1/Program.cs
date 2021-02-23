@@ -30,6 +30,7 @@ namespace Processes_HomeWork_N1
             info2.Arguments = path + ' ' + word;
             info2.FileName = "..\\..\\..\\Word Counter\\bin\\Debug\\Word Counter.exe";
             Process process2 = Process.Start(info2);
+            
 
         }
     }
