@@ -19,6 +19,7 @@ namespace Processes_HomeWork_N1
             info1.FileName = "..\\..\\..\\Calc\\bin\\Debug\\Calc.exe";
             Process process1 = Process.Start(info1);
 
+            
             Console.Write("Path: ");
             //var path = Console.ReadLine();
             var path = "..\\..\\..\\Test.txt";
